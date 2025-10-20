@@ -5,6 +5,9 @@ return {
 		config = function()
 			local config = require("nvim-treesitter.configs")
 			config.setup({
+				ignore_install = { "haskell" },
+				sync_install = false,
+				modules = {},
 				auto_install = false,
 				ensure_installed = {
 					"bash",

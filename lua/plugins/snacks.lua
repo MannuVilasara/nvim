@@ -11,7 +11,7 @@ return {
 			enabled = true,
 			preset = {
 				header = [[
-                                                                     
+                mannu                                                
        ████ ██████           █████      ██                     
       ███████████             █████                             
       █████████ ███████████████████ ███   ███████████   
@@ -90,9 +90,9 @@ return {
 			desc = "Grep Files",
 		},
 		{
-			"<C-n>",
+			"<leader>ee",
 			function()
-				Snacks.explorer()
+				Snacks.explorer.open()
 			end,
 			desc = "Explorer",
 		},
