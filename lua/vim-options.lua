@@ -73,6 +73,9 @@ keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "Go to next tab" })
 keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "Go to previous tab" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer in new tab" })
 
+-- lazydocker
+-- vim.keymap.set("n", "<leader>ld", "<cmd>lazydocker<CR>", { desc = "Open Lazydocker" })
+
 -- toggleterm
 vim.keymap.set("n", "<leader>1", "<cmd>ToggleTerm<CR>", { desc = "Toggle term" })
 
