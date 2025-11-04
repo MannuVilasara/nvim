@@ -50,12 +50,18 @@ vim.g.mapleader = " "
 vim.opt.swapfile = false
 
 -- Navigate vim panes better
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>", { desc = "Navigate up" })
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>", { desc = "Navigate down" })
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>", { desc = "Navigate left" })
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>", { desc = "Navigate right" })
 
-vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+-- Navigate vim panes with Ctrl+Arrow keys
+vim.keymap.set("n", "<C-Up>", ":wincmd k<CR>", { desc = "Navigate up" })
+vim.keymap.set("n", "<C-Down>", ":wincmd j<CR>", { desc = "Navigate down" })
+vim.keymap.set("n", "<C-Left>", ":wincmd h<CR>", { desc = "Navigate left" })
+vim.keymap.set("n", "<C-Right>", ":wincmd l<CR>", { desc = "Navigate right" })
+
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "Clear search highlights" })
 vim.wo.number = true
 
 -- window management
