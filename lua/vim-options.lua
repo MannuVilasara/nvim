@@ -79,6 +79,10 @@ keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open current buffer
 -- toggleterm
 vim.keymap.set("n", "<leader>1", "<cmd>ToggleTerm<CR>", { desc = "Toggle term" })
 
+-- nerdy keymaps
+vim.keymap.set("n", "<leader>in", "<cmd>Nerdy<CR>", { desc = "Icons" })
+
+-- diagnostic keymaps
 vim.diagnostic.config({
 	virtual_text = true,
 	signs = true,
