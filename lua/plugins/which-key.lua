@@ -7,7 +7,6 @@ return {
 	end,
 	config = function()
 		local wk = require("which-key")
-		
 		wk.setup({
 			preset = "modern",
 			delay = 500,
