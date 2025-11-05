@@ -39,7 +39,12 @@ return {
 					{ "filetype" },
 				},
 				lualine_y = { "progress" },
-				lualine_z = { "location", { "os", fmt = function() return "Arch" end } },
+				lualine_z = { "location", {
+					"os",
+					fmt = function()
+						return "Arch 󰣇"
+					end,
+				} },
 			},
 			inactive_sections = {
 				lualine_a = {},
