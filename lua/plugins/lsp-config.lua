@@ -29,8 +29,23 @@ return {
 			-- Configure TailwindCSS LSP
 			vim.lsp.config.tailwindcss = {
 				cmd = { "tailwindcss-language-server", "--stdio" },
-				filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte" },
-				root_markers = { "tailwind.config.js", "tailwind.config.cjs", "tailwind.config.mjs", "tailwind.config.ts" },
+				filetypes = {
+					"html",
+					"css",
+					"scss",
+					"javascript",
+					"javascriptreact",
+					"typescript",
+					"typescriptreact",
+					"vue",
+					"svelte",
+				},
+				root_markers = {
+					"tailwind.config.js",
+					"tailwind.config.cjs",
+					"tailwind.config.mjs",
+					"tailwind.config.ts",
+				},
 				capabilities = capabilities,
 			}
 
@@ -46,7 +61,16 @@ return {
 			vim.lsp.config.lua_ls = {
 				cmd = { "lua-language-server" },
 				filetypes = { "lua" },
-				root_markers = { ".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git" },
+				root_markers = {
+					".luarc.json",
+					".luarc.jsonc",
+					".luacheckrc",
+					".stylua.toml",
+					"stylua.toml",
+					"selene.toml",
+					"selene.yml",
+					".git",
+				},
 				capabilities = capabilities,
 				settings = {
 					Lua = {
