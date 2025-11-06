@@ -31,6 +31,12 @@ return {
 		scroll = { enabled = false },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
+		win = { enabled = true },
+		styles = {
+			notification = {
+				wo = { wrap = true },
+			},
+		},
 	},
 	keys = {
 		{
@@ -95,6 +101,34 @@ return {
 				Snacks.explorer.open()
 			end,
 			desc = "Explorer",
+		},
+		{
+			"<leader>p",
+			function()
+				Snacks.picker.pick("commands")
+			end,
+			desc = "Command Palette",
+		},
+		{
+			"<leader>fh",
+			function()
+				Snacks.picker.help()
+			end,
+			desc = "Help Pages",
+		},
+		{
+			"<leader>fc",
+			function()
+				Snacks.picker.colorschemes()
+			end,
+			desc = "Colorschemes",
+		},
+		{
+			"<leader>fk",
+			function()
+				Snacks.picker.keymaps()
+			end,
+			desc = "Keymaps",
 		},
 	},
 }
