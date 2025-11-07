@@ -6,13 +6,19 @@ A modern, feature-rich Neovim configuration built with Lua and managed by [lazy.
 
 ### Dashboard
 
-<!--  -->
+<img width="1073" height="712" alt="image" src="https://github.com/user-attachments/assets/9a425691-3db6-44ad-8819-9736c42c9129" />
 
 ### Coding Interface
 
+<img width="997" height="736" alt="image" src="https://github.com/user-attachments/assets/f4cc3efb-c920-452a-8253-a4f00957cf90" />
+
 ### File Explorer
 
+<img width="1242" height="940" alt="image" src="https://github.com/user-attachments/assets/3ed24e6e-a2f6-4ffc-895b-2f356bdc1d67" />
+
 ### Command Palette
+
+<img width="1128" height="773" alt="image" src="https://github.com/user-attachments/assets/2e6f037f-a884-4966-bbf7-2528cf4a57ae" />
 
 ## ✨ Features
 
