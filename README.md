@@ -2,6 +2,18 @@
 
 A modern, feature-rich Neovim configuration built with Lua and managed by [lazy.nvim](https://github.com/folke/lazy.nvim).
 
+## 📸 Screenshots
+
+### Dashboard
+
+<!--  -->
+
+### Coding Interface
+
+### File Explorer
+
+### Command Palette
+
 ## ✨ Features
 
 - 🎨 **Beautiful UI** with Catppuccin theme
