@@ -21,6 +21,47 @@ return {
  ██████  █████████████████████ ████ █████ █████ ████ ██████ 
         ]],
 			},
+			sections = {
+				{ section = "header" },
+				{ section = "keys", gap = 1, padding = 2 },
+				function()
+					local handle = io.popen(
+						"playerctl metadata --format '{{artist}}|||{{title}}' 2>/dev/null"
+					)
+					local result = handle:read("*a")
+					handle:close()
+
+					if result and result ~= "" then
+						local artist, title = result:match("(.-)|||(.+)")
+						if artist and title then
+							artist = artist:gsub("^%s*(.-)%s*$", "%1")
+							title = title:gsub("^%s*(.-)%s*$", "%1")
+							return {
+								align = "center",
+								text = {
+									{ "♫ Now Playing: ", hl = "SnacksDashboardIcon" },
+									{ artist, hl = "Special" },
+									{ " - ", hl = "SnacksDashboardDesc" },
+									{ title, hl = "String" },
+								},
+							}
+						end
+					end
+
+					return {
+						align = "center",
+						text = {
+							{ "♫ No music playing", hl = "Comment" },
+						},
+					}
+				end,
+				{
+					text = "─",
+					align = "center",
+					hl = "SnacksDashboardSpecial",
+				},
+				{ section = "startup", padding = 1 },
+			},
 		},
 		indent = { enabled = true },
 		input = { enabled = true },
