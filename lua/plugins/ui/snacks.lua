@@ -25,9 +25,7 @@ return {
 				{ section = "header" },
 				{ section = "keys", gap = 1, padding = 2 },
 				function()
-					local handle = io.popen(
-						"playerctl metadata --format '{{artist}}|||{{title}}' 2>/dev/null"
-					)
+					local handle = io.popen("playerctl metadata --format '{{artist}}|||{{title}}' 2>/dev/null")
 					local result = handle:read("*a")
 					handle:close()
 
@@ -67,7 +65,7 @@ return {
 		input = { enabled = true },
 		git = { enabled = true },
 		picker = { enabled = true },
-		notifier = { enabled = false },
+		notifier = { enabled = true },
 		quickfile = { enabled = true },
 		scroll = { enabled = false },
 		statuscolumn = { enabled = true },

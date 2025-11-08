@@ -1,8 +1,7 @@
 return {
 	{
 		"catppuccin/nvim",
-		-- enabled = false,
-		lazy = false,
+		lazy = false, -- Keep this as default theme
 		name = "catppuccin",
 		priority = 1000,
 

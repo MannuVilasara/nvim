@@ -13,8 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Load core configuration
 -- Try new structure first, fallback to old if not migrated yet
-local core_config = vim.fn.filereadable(vim.fn.stdpath("config") .. "/lua/core/options.lua") == 1
-	and "core.options"
+local core_config = vim.fn.filereadable(vim.fn.stdpath("config") .. "/lua/core/options.lua") == 1 and "core.options"
 	or "vim-options"
 require(core_config)
 
@@ -37,13 +36,17 @@ require("lazy").setup({
 	-- Lazy.nvim configuration
 	checker = {
 		enabled = true,
-		notify = false,
+		notify = true,
 	},
-	change_detection = {
-		notify = false,
-	},
+	-- change_detection = {
+	-- 	-- notify = false,
+	-- },
 	ui = {
 		border = "rounded",
+		size = {
+			width = 0.8,
+			height = 0.8,
+		},
 		icons = {
 			cmd = " ",
 			config = "",
@@ -55,17 +58,28 @@ require("lazy").setup({
 			lazy = "󰒲 ",
 			loaded = "●",
 			not_loaded = "○",
-			plugin = " ",
+			plugin = " ",
 			runtime = " ",
 			require = "󰢱 ",
 			source = " ",
-			start = " ",
+			start = " ",
 			task = "✔ ",
 			list = {
 				"●",
 				"➜",
 				"★",
 				"‒",
+			},
+		},
+	},
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"gzip",
+				"tarPlugin",
+				"tohtml",
+				"tutor",
+				"zipPlugin",
 			},
 		},
 	},
