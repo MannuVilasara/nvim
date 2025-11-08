@@ -21,7 +21,7 @@ return {
 			{ "<leader>g", group = "Git" },
 			{ "<leader>i", group = "Insert" },
 			{ "<leader>l", group = "Lazygit" },
-			{ "<leader>m", group = "Markdown" },
+			{ "<leader>m", group = "Music" },
 			{ "<leader>s", group = "Split/Scratch" },
 			{ "<leader>t", group = "Tab/Test/Terminal" },
 
@@ -64,10 +64,10 @@ return {
 			{ "<leader>ld", desc = "Lazydocker" },
 			{ "<leader>lg", desc = "Lazygit" },
 
-			-- Markdown group
-			{ "<leader>mp", desc = "Markdown preview" },
-			{ "<leader>ms", desc = "Markdown stop preview" },
-			{ "<leader>mt", desc = "Markdown toggle preview" },
+			-- Music group
+			{ "<leader>mp", desc = "Toggle Music Window" },
+			-- { "<leader>ms", desc = "Markdown stop preview" },
+			-- { "<leader>mt", desc = "Markdown toggle preview" },
 
 			-- Scratch group
 			{ "<leader>sf", desc = "Scratch buffer" },
