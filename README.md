@@ -1,6 +1,10 @@
-# 🚀 My Neovim Configuration
+# 🚀 Mannu's Neovim Configuration
 
-A modern, feature-rich Neovim configuration built with Lua and managed by [lazy.nvim](https://github.com/folke/lazy.nvim).
+> ⭐ **If you find this config helpful, please star the repository!** It motivates me to keep improving and adding new features.
+
+A modern, feature-rich Neovim configuration built with Lua and managed by [lazy.nvim](https://github.com/folke/lazy.nvim). Organized, fast, and beautiful - just the way it should be.
+
+---
 
 ## 📸 Screenshots
 
@@ -22,18 +26,24 @@ A modern, feature-rich Neovim configuration built with Lua and managed by [lazy.
 
 ## ✨ Features
 
-- 🎨 **Beautiful UI** with Catppuccin theme
-- 📦 **Plugin Management** via lazy.nvim
-- 🔍 **Fuzzy Finding** with Snacks picker
-- 🌳 **File Explorer** with nvim-tree and oil.nvim (disabled by default as snacks handle it well)
-- 💡 **LSP Support** with auto-completion and diagnostics
-- 🎯 **GitHub Copilot** integration
-- 🔄 **Git Integration** with LazyGit and diff support
-- 🧪 **Testing** with vim-test
-- 📝 **Markdown Preview** support (disabled by default)
-- 🐳 **Docker Management** with LazyDocker
-- 🎭 **Discord Presence** with cord.nvim
-- ⚡ **Fast Startup** with optimized lazy loading
+- 🎨 **Beautiful UI** - Catppuccin theme with optional transparency
+- 🎯 **Centered Command Palette** - Noice.nvim for beautiful cmdline with icons
+- 📦 **Smart Plugin Management** - lazy.nvim with organized structure
+- 🔍 **Fuzzy Finding** - Snacks picker for files, grep, buffers
+- 🌳 **File Explorer** - Snacks explorer (nvim-tree and oil.nvim also available)
+- 💡 **Full LSP Support** - Auto-completion, diagnostics, and formatting
+- 🎯 **GitHub Copilot** - AI-powered code completion
+- 🔄 **Git Integration** - LazyGit integration with diff support
+- 📊 **Smart Statusline** - Shows git status, diagnostics, and "I use Arch btw"
+- 🧪 **Testing** - vim-test integration
+- 📝 **Markdown & API Preview** - Live preview for markdown and Swagger/OpenAPI
+- 🐳 **Docker Management** - LazyDocker integration
+- 🎭 **Discord Presence** - Show what you're coding with cord.nvim
+- 🎵 **Now Playing** - Dashboard shows current song via playerctl
+- 🎨 **Code Folding** - nvim-ufo for smart folding
+- ⚡ **Fast Startup** - Optimized lazy loading (~80ms with 26+ plugins)
+
+---
 
 ## 📋 Requirements
 
@@ -65,69 +75,60 @@ Lazy.nvim will automatically install all plugins on first launch.
 
 ## 📦 Plugins
 
+Plugins are organized into categories for better maintainability. See [STRUCTURE.md](STRUCTURE.md) for the complete organization guide.
+
 ### Core
 
-- **lazy.nvim** - Plugin manager
+- **lazy.nvim** - Modern plugin manager
 - **plenary.nvim** - Lua utility functions
 
-### UI & Appearance
+### UI & Appearance (`lua/plugins/ui/`)
 
-- **catppuccin** - Color scheme
-- **lualine.nvim** - Statusline with git, diagnostics, and "I use Arch btw"
-- **bufferline.nvim** - Buffer/tab line
-- **nvim-web-devicons** - File icons
-- **nvim-colorizer.lua** - Color highlighter
+- **catppuccin** - Beautiful color scheme with transparency support
+- **lualine.nvim** - Customizable statusline with git, diagnostics, and OS info
+- **bufferline.nvim** - Buffer/tab line with navigation shortcuts
+- **noice.nvim** - Enhanced cmdline with centered popup and icons
+- **nvim-web-devicons** - File icons everywhere
+- **nvim-colorizer.lua** - Live color preview
 - **dressing.nvim** - Better UI for input/select
-- **fidget.nvim** - LSP progress indicator
-- **snacks.nvim** - Dashboard and utilities
+- **fidget.nvim** - LSP progress notifications
+- **snacks.nvim** - Dashboard with now playing and utilities
 
-### Editor
+### Editor (`lua/plugins/editor/`)
 
-- **nvim-treesitter** - Syntax highlighting and code understanding
-- **nvim-autopairs** - Auto-close pairs
-- **comment.nvim** - Smart commenting
-- **which-key.nvim** - Keybinding popup
-
-### File Navigation
-
-- **nvim-tree.lua** - File explorer
+- **nvim-treesitter** - Better syntax highlighting and code understanding
+- **nvim-autopairs** - Auto-close brackets and quotes
+- **comment.nvim** - Smart commenting (gcc, gbc)
+- **which-key.nvim** - Keybinding hints popup
+- **nvim-ufo** - Smart code folding with treesitter
+- **nvim-tree.lua** - File explorer sidebar
 - **oil.nvim** - Edit filesystem like a buffer
-- **snacks.picker** - Fuzzy finder for files, grep, buffers
 
-### LSP & Completion
+### LSP & Completion (`lua/plugins/lsp/`)
 
-- **nvim-lspconfig** - LSP configurations
-- **nvim-cmp** - Completion engine
+- **nvim-lspconfig** - Easy LSP server configurations
+- **nvim-cmp** - Powerful completion engine
 - **cmp-nvim-lsp** - LSP completion source
-- **cmp-buffer** - Buffer completion source
-- **cmp-path** - Path completion source
+- **cmp-buffer** - Buffer word completion
+- **cmp-path** - File path completion
 - **LuaSnip** - Snippet engine
 - **cmp_luasnip** - Snippet completion source
-
-### Git
-
-- **lazygit.nvim** - LazyGit integration
-- **gitsigns.nvim** - Git decorations
-
-### Code Quality
-
 - **none-ls.nvim** - Formatting and linting
-- **conform.nvim** - Code formatter
+- **conform.nvim** - Fast code formatter
 
-### Language Support
+### Tools (`lua/plugins/tools/`)
 
-- **vim-rails** - Ruby on Rails support
-- **markdown-preview.nvim** - Markdown preview
+- **copilot.lua** - GitHub Copilot integration
+- **toggleterm.nvim** - Terminal management
+- **lazydocker.nvim** - Docker TUI integration
+- **vim-test** - Test runner
+- **cord.nvim** - Discord Rich Presence
+- **nvim-tmux-navigation** - Seamless tmux/vim navigation
+- **rails.nvim** - Ruby on Rails utilities
+- **markdown-preview.nvim** - Live markdown preview
 - **swagger-preview.nvim** - Swagger/OpenAPI preview
 
-### Tools
-
-- **toggleterm.nvim** - Terminal management
-- **vim-test** - Test runner
-- **lazydocker.nvim** - Docker management
-- **copilot.lua** - GitHub Copilot
-- **cord.nvim** - Discord Rich Presence
-- **nvim-tmux-navigation** - Seamless tmux navigation
+---
 
 ## ⌨️ Key Bindings
 
@@ -141,17 +142,32 @@ Lazy.nvim will automatically install all plugins on first launch.
 - `n` - New File
 - `g` - Find Text (Grep)
 - `r` - Recent Files
-- `c` - Config
+- `c` - Open Config
 - `L` - Lazy Plugin Manager
 - `q` - Quit
 
-### File Navigation
+### Fuzzy Finding
 
 - `<C-p>` - Find Files
 - `<leader><leader>` - Recent Files
 - `<leader>fb` - Buffers
 - `<leader>fg` - Grep Files
+- `<leader>p` - Command Palette
+- `<leader>fh` - Help Pages
+- `<leader>fc` - Colorschemes
+- `<leader>fk` - Keymaps
+
+### File Explorer
+
 - `<leader>ee` - Toggle Explorer
+
+### Buffer Navigation
+
+- `Tab` - Next Buffer
+- `Shift+Tab` - Previous Buffer
+- `<leader>bd` - Delete Buffer
+- `<leader>bb` - Pick Buffer
+- `<leader>b1-9` - Go to Buffer 1-9
 
 ### Git
 
@@ -163,63 +179,114 @@ Lazy.nvim will automatically install all plugins on first launch.
 - `<leader>sf` - Toggle Scratch Buffer
 - `<leader>S` - Select Scratch Buffer
 
-### Terminal
+### Code Folding (UFO)
 
-- `<leader>t` - Toggle Terminal (configured in toggleterm)
+- `zR` - Open all folds
+- `zM` - Close all folds
+- `za` - Toggle fold under cursor
+- `zj` - Go to next fold
+- `zk` - Go to previous fold
+
+### Fidget Notifications (Demo)
+
+- `<leader>na` - Info notification
+- `<leader>nb` - Warning notification
+- `<leader>nc` - Notification with annotation
+- `<leader>np` - Progress spinner demo
+
+---
 
 ## 🎨 Customization
 
-### Changing Theme
+### Transparency Toggle
 
-Edit `lua/plugins/catppuccin.lua` to customize the Catppuccin theme variant (mocha, macchiato, frappe, latte).
+Edit `lua/plugins/ui/catppuccin.lua` and change:
+
+```lua
+local transparent = true -- Set to false to disable transparency
+```
+
+### Changing Theme Variant
+
+In `lua/plugins/ui/catppuccin.lua`, change the colorscheme command:
+
+```lua
+vim.cmd.colorscheme("catppuccin-mocha")  -- mocha, macchiato, frappe, or latte
+```
 
 ### Adding Plugins
 
-Add new plugin files in `lua/plugins/` directory. They will be automatically loaded by lazy.nvim.
+Add new plugin files in the appropriate category:
+
+- UI plugins → `lua/plugins/ui/`
+- Editor plugins → `lua/plugins/editor/`
+- LSP plugins → `lua/plugins/lsp/`
+- Tools → `lua/plugins/tools/`
+
+They will be automatically loaded by lazy.nvim.
 
 ### Modifying Keybindings
 
-Edit `lua/vim-options.lua` for general keybindings or individual plugin files for plugin-specific bindings.
+- Core options: `lua/core/options.lua` (or `lua/vim-options.lua` if not migrated)
+- Plugin-specific: Edit the individual plugin file
 
-## 📁 Structure
+---
+
+## 📁 Project Structure
 
 ```
 ~/.config/nvim/
-├── init.lua                    # Entry point
+├── init.lua                    # Entry point with lazy.nvim setup
 ├── lazy-lock.json              # Plugin version lock file
+├── STRUCTURE.md                # Organization guide
+├── reorganize.sh               # Migration script
+├── README.md                   # This file
+│
 ├── lua/
-│   ├── vim-options.lua         # Vim options and general settings
-│   ├── plugins.lua             # Lazy.nvim setup
-│   └── plugins/                # Individual plugin configurations
-│       ├── autopairs.lua
-│       ├── bufferline.lua
-│       ├── catppuccin.lua
-│       ├── cmdpalette.lua
-│       ├── comment.lua
-│       ├── completions.lua
-│       ├── copilot.lua
-│       ├── cord.lua
-│       ├── dressing.lua
-│       ├── fidget.lua
-│       ├── formatting.lua
-│       ├── lazydocker.lua
-│       ├── lsp-config.lua
-│       ├── lualine.lua
-│       ├── markdown-preview.lua
-│       ├── nerdy-icons.lua
-│       ├── none-ls.lua
-│       ├── nvim-colorizer.lua
-│       ├── nvim-tmux-navigation.lua
-│       ├── nvim-tree.lua
-│       ├── oil.lua
-│       ├── rails.lua
-│       ├── snacks.lua
-│       ├── swagger-preview.lua
-│       ├── toggleterm.lua
-│       ├── treesitter.lua
-│       ├── vim-test.lua
-│       └── which-key.lua
+│   ├── core/                   # Core configuration (optional, organized structure)
+│   │   └── options.lua         # Vim options and settings
+│   │
+│   ├── vim-options.lua         # Vim options (legacy, can be migrated to core/)
+│   ├── plugins.lua             # Lazy.nvim bootstrap
+│   │
+│   └── plugins/                # Plugin configurations (organized by category)
+│       ├── ui/                 # UI & Appearance
+│       │   ├── catppuccin.lua
+│       │   ├── lualine.lua
+│       │   ├── bufferline.lua
+│       │   ├── noice.lua
+│       │   ├── snacks.lua
+│       │   ├── dressing.lua
+│       │   ├── fidget.lua
+│       │   └── nvim-colorizer.lua
+│       │
+│       ├── editor/             # Editor enhancements
+│       │   ├── treesitter.lua
+│       │   ├── autopairs.lua
+│       │   ├── comment.lua
+│       │   ├── which-key.lua
+│       │   ├── ufo.lua
+│       │   ├── nvim-tree.lua
+│       │   └── oil.lua
+│       │
+│       ├── lsp/                # LSP & Completion
+│       │   ├── lsp-config.lua
+│       │   ├── completions.lua
+│       │   ├── none-ls.lua
+│       │   └── formatting.lua
+│       │
+│       ├── git/                # Git tools (future)
+│       │
+│       └── tools/              # Development tools
+│           ├── copilot.lua
+│           ├── toggleterm.lua
+│           ├── lazydocker.lua
+│           ├── vim-test.lua
+│           ├── cord.lua
+│           └── ...
 ```
+
+---
 
 ## 🔧 Troubleshooting
 
@@ -247,24 +314,52 @@ Edit `lua/vim-options.lua` for general keybindings or individual plugin files fo
 
 ## 💡 Tips
 
-1. Use `:checkhealth` to diagnose issues
-2. Run `:Lazy` to manage plugins
-3. Use `:Mason` to install LSP servers, formatters, and linters
-4. Press `<leader>` and wait to see available keybindings (which-key)
-5. The statusline shows "Arch" to proudly display your OS choice
+1. **Health Check** - Use `:checkhealth` to diagnose issues
+2. **Plugin Manager** - Run `:Lazy` to manage plugins
+3. **LSP Servers** - Use `:Mason` to install LSP servers, formatters, and linters
+4. **Keybinding Help** - Press `<leader>` and wait to see available keybindings (which-key)
+5. **Transparency** - Toggle in `lua/plugins/ui/catppuccin.lua` with one line
+6. **Now Playing** - Dashboard shows your current song via playerctl (Spotify, VLC, etc.)
+7. **Command Palette** - Press `:` for centered command palette with icons
+8. **Code Folding** - Use `za` to toggle folds, `zR`/`zM` to open/close all
+
+---
 
 ## 🤝 Contributing
 
-Feel free to fork this repository and customize it to your needs!
+Feel free to fork this repository and customize it to your needs! Found a bug or have a suggestion? Open an issue!
+
+---
 
 ## 📝 License
 
 MIT License - Feel free to use and modify as you wish.
 
+---
+
 ## 🙏 Acknowledgments
 
 Thanks to the Neovim community and all plugin authors for their amazing work!
 
-Please star the repo. It motivates me that people do like my work so I should keep working on amazing things ⭐
+Special thanks to:
+
+- [folke](https://github.com/folke) - For lazy.nvim, noice.nvim, and snacks.nvim
+- [catppuccin](https://github.com/catppuccin) - For the beautiful theme
+- The entire Neovim community for making this possible
+
+---
+
+## ⭐ Support
+
+If this configuration helped you or inspired your setup, please consider:
+
+- ⭐ **Starring the repository** - It really motivates me!
+- 🍴 **Forking and customizing** - Make it your own
+- 🐛 **Reporting issues** - Help improve it for everyone
+- 💬 **Sharing feedback** - Let me know what you think
+
+**Star the repo if you found it helpful! It means a lot to me! ⭐**
+
+---
 
 **Note:** I use Arch btw 🐧
