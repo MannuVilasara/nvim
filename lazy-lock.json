@@ -31,6 +31,7 @@
   "oil.nvim": { "branch": "master", "commit": "7e1cd7703ff2924d7038476dcbc04b950203b902" },
   "onedark.nvim": { "branch": "master", "commit": "918e89e6993b2901eea47b9f4eb666d53c2542a6" },
   "promise-async": { "branch": "main", "commit": "119e8961014c9bfaf1487bf3c2a393d254f337e2" },
+  "snacks-music-player.nvim": { "branch": "main", "commit": "15cb2af7b14d64dabec5d3c26ce8ea8b2649df6a" },
   "snacks.nvim": { "branch": "main", "commit": "eee204d690f8d8e755229ff20f63d23d48565d7c" },
   "swagger-preview.nvim": { "branch": "master", "commit": "67e0ea60443922f39689d7002e0a8448fb47b4af" },
   "toggleterm.nvim": { "branch": "main", "commit": "50ea089fc548917cc3cc16b46a8211833b9e3c7c" },
