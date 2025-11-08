@@ -9,19 +9,21 @@ return {
 		-- you can enable a preset for easier configuration
 		presets = {
 			bottom_search = true, -- use a classic bottom cmdline for search
-			command_palette = true, -- position the cmdline and popupmenu together
+			command_palette = false, -- disable command palette to control position separately
 			long_message_to_split = true, -- long messages will be sent to a split
 			lsp_doc_border = false, -- add a border to hover docs and signature help
+		},
+		views = {
+			cmdline_popup = {
+				position = {
+					row = "50%",
+					col = "50%",
+				},
+			},
 		},
 		cmdline = {
 			enabled = true,
 			view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
-			opts = {
-				position = {
-					row = "50%", -- center vertically
-					col = "50%", -- center horizontally
-				},
-			},
 			format = {
 				cmdline = { pattern = "^:", icon = "", lang = "vim" },
 				search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
