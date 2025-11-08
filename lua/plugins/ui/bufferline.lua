@@ -2,6 +2,7 @@ return {
 	"akinsho/bufferline.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	version = "*",
+	event = "VeryLazy", -- Load bufferline on startup
 	opts = {
 		options = {
 			mode = "buffers", -- Changed from "tabs" to "buffers" for better buffer management
