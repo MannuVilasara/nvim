@@ -18,7 +18,6 @@ return {
 					"javascript",
 					"typescript",
 					"tsx",
-					"jsx",
 					"json",
 					"jsonc",
 					"lua",
