@@ -10,7 +10,19 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {
-			auto_install = true,
+			ensure_installed = {
+				"lua_ls",
+				"ts_ls",
+				"eslint",
+				"html",
+				"cssls",
+				"jsonls",
+				"dockerls",
+				"docker_compose_language_service",
+				"yamlls",
+				"tailwindcss",
+			},
+			automatic_installation = true,
 		},
 	},
 	{
@@ -40,25 +52,17 @@ return {
 					"vue",
 					"svelte",
 				},
-				root_markers = {
-					"tailwind.config.js",
-					"tailwind.config.cjs",
-					"tailwind.config.mjs",
-					"tailwind.config.ts",
-				},
-				capabilities = capabilities,
-			}
+			root_markers = {
+				"tailwind.config.js",
+				"tailwind.config.cjs",
+				"tailwind.config.mjs",
+				"tailwind.config.ts",
+			},
+			capabilities = capabilities,
+		}
 
-			-- Configure Ruby LSP
-			vim.lsp.config.ruby_lsp = {
-				cmd = { "/home/typecraft/.asdf/shims/ruby-lsp" },
-				filetypes = { "ruby", "eruby" },
-				root_markers = { "Gemfile", ".git" },
-				capabilities = capabilities,
-			}
-
-			-- Configure Lua LS
-			vim.lsp.config.lua_ls = {
+		-- Configure Lua LS
+		vim.lsp.config.lua_ls = {
 				cmd = { "lua-language-server" },
 				filetypes = { "lua" },
 				root_markers = {
@@ -91,10 +95,142 @@ return {
 				},
 			}
 
+			-- Configure TypeScript/JavaScript LSP (for React, Next.js, Node.js)
+			vim.lsp.config.ts_ls = {
+				cmd = { "typescript-language-server", "--stdio" },
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+				},
+				root_markers = {
+					"package.json",
+					"tsconfig.json",
+					"jsconfig.json",
+					".git",
+				},
+				capabilities = capabilities,
+				settings = {
+					typescript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+					javascript = {
+						inlayHints = {
+							includeInlayParameterNameHints = "all",
+							includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+							includeInlayFunctionParameterTypeHints = true,
+							includeInlayVariableTypeHints = true,
+							includeInlayPropertyDeclarationTypeHints = true,
+							includeInlayFunctionLikeReturnTypeHints = true,
+							includeInlayEnumMemberValueHints = true,
+						},
+					},
+				},
+			}
+
+			-- Configure ESLint LSP (for JavaScript/TypeScript linting)
+			vim.lsp.config.eslint = {
+				cmd = { "vscode-eslint-language-server", "--stdio" },
+				filetypes = {
+					"javascript",
+					"javascriptreact",
+					"javascript.jsx",
+					"typescript",
+					"typescriptreact",
+					"typescript.tsx",
+					"vue",
+					"svelte",
+				},
+				root_markers = {
+					".eslintrc",
+					".eslintrc.js",
+					".eslintrc.cjs",
+					".eslintrc.yaml",
+					".eslintrc.yml",
+					".eslintrc.json",
+					"package.json",
+				},
+				capabilities = capabilities,
+			}
+
+			-- Configure HTML LSP
+			vim.lsp.config.html = {
+				cmd = { "vscode-html-language-server", "--stdio" },
+				filetypes = { "html", "templ" },
+				root_markers = { "package.json", ".git" },
+				capabilities = capabilities,
+			}
+
+			-- Configure CSS LSP
+			vim.lsp.config.cssls = {
+				cmd = { "vscode-css-language-server", "--stdio" },
+				filetypes = { "css", "scss", "less" },
+				root_markers = { "package.json", ".git" },
+				capabilities = capabilities,
+			}
+
+			-- Configure JSON LSP
+			vim.lsp.config.jsonls = {
+				cmd = { "vscode-json-language-server", "--stdio" },
+				filetypes = { "json", "jsonc" },
+				root_markers = { "package.json", ".git" },
+				capabilities = capabilities,
+			}
+
+			-- Configure Docker LSP
+			vim.lsp.config.dockerls = {
+				cmd = { "docker-langserver", "--stdio" },
+				filetypes = { "dockerfile" },
+				root_markers = { "Dockerfile", ".git" },
+				capabilities = capabilities,
+			}
+
+			-- Configure Docker Compose LSP
+			vim.lsp.config.docker_compose_language_service = {
+				cmd = { "docker-compose-langserver", "--stdio" },
+				filetypes = { "yaml.docker-compose", "yaml" },
+				root_markers = { "docker-compose.yaml", "docker-compose.yml", ".git" },
+				capabilities = capabilities,
+			}
+
+			-- Configure YAML LSP
+			vim.lsp.config.yamlls = {
+				cmd = { "yaml-language-server", "--stdio" },
+				filetypes = { "yaml", "yaml.docker-compose" },
+				root_markers = { ".git" },
+				capabilities = capabilities,
+				settings = {
+					yaml = {
+						schemas = {
+							["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+							["https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json"] = "docker-compose*.{yml,yaml}",
+						},
+					},
+				},
+			}
+
 			-- Enable LSP servers
 			vim.lsp.enable("tailwindcss")
-			vim.lsp.enable("ruby_lsp")
 			vim.lsp.enable("lua_ls")
+			vim.lsp.enable("ts_ls")
+			vim.lsp.enable("eslint")
+			vim.lsp.enable("html")
+			vim.lsp.enable("cssls")
+			vim.lsp.enable("jsonls")
+			vim.lsp.enable("dockerls")
+			vim.lsp.enable("docker_compose_language_service")
+			vim.lsp.enable("yamlls")
 
 			-- LSP Keybindings
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: Hover documentation" })
