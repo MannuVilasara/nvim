@@ -52,17 +52,17 @@ return {
 					"vue",
 					"svelte",
 				},
-			root_markers = {
-				"tailwind.config.js",
-				"tailwind.config.cjs",
-				"tailwind.config.mjs",
-				"tailwind.config.ts",
-			},
-			capabilities = capabilities,
-		}
+				root_markers = {
+					"tailwind.config.js",
+					"tailwind.config.cjs",
+					"tailwind.config.mjs",
+					"tailwind.config.ts",
+				},
+				capabilities = capabilities,
+			}
 
-		-- Configure Lua LS
-		vim.lsp.config.lua_ls = {
+			-- Configure Lua LS
+			vim.lsp.config.lua_ls = {
 				cmd = { "lua-language-server" },
 				filetypes = { "lua" },
 				root_markers = {
