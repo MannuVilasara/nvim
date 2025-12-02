@@ -1,3 +1,17 @@
+local servers = {
+	"lua_ls",
+	"ts_ls",
+	"eslint",
+	"html",
+	"cssls",
+	"jsonls",
+	"dockerls",
+	"docker_compose_language_service",
+	"yamlls",
+	"tailwindcss",
+	"gopls",
+}
+
 return {
 	{
 		"williamboman/mason.nvim",
@@ -10,18 +24,7 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		lazy = false,
 		opts = {
-			ensure_installed = {
-				"lua_ls",
-				"ts_ls",
-				"eslint",
-				"html",
-				"cssls",
-				"jsonls",
-				"dockerls",
-				"docker_compose_language_service",
-				"yamlls",
-				"tailwindcss",
-			},
+			ensure_installed = servers,
 			automatic_installation = true,
 		},
 	},
@@ -220,17 +223,27 @@ return {
 				},
 			}
 
+			-- Configure Go LSP
+			vim.lsp.config.gopls = {
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				root_markers = { "go.work", "go.mod", ".git" },
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						completeUnimported = true,
+						usePlaceholders = true,
+						analyses = {
+							unusedparams = true,
+						},
+					},
+				},
+			}
+
 			-- Enable LSP servers
-			vim.lsp.enable("tailwindcss")
-			vim.lsp.enable("lua_ls")
-			vim.lsp.enable("ts_ls")
-			vim.lsp.enable("eslint")
-			vim.lsp.enable("html")
-			vim.lsp.enable("cssls")
-			vim.lsp.enable("jsonls")
-			vim.lsp.enable("dockerls")
-			vim.lsp.enable("docker_compose_language_service")
-			vim.lsp.enable("yamlls")
+			for _, server in ipairs(servers) do
+				vim.lsp.enable(server)
+			end
 
 			-- LSP Keybindings
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "LSP: Hover documentation" })

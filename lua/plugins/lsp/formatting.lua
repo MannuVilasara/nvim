@@ -21,6 +21,7 @@ return {
 				lua = { "stylua" },
 				python = { "isort", "black" },
 				cpp = { "clang-format" },
+				go = { "gofumpt", "goimports" },
 			},
 			format_on_save = {
 				lsp_fallback = true,
