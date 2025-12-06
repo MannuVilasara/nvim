@@ -26,6 +26,7 @@ return {
 					"yaml",
 					"dockerfile",
 					"gitignore",
+					"go",
 				},
 				highlight = { enable = true },
 				indent = { enable = false },
