@@ -27,6 +27,8 @@ return {
 					"dockerfile",
 					"gitignore",
 					"go",
+					"qmljs",
+					"qmldir",
 				},
 				highlight = { enable = true },
 				indent = { enable = false },

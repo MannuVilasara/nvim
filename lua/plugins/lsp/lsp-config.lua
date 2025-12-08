@@ -10,6 +10,7 @@ local servers = {
 	"yamlls",
 	"tailwindcss",
 	"gopls",
+	"qmlls",
 }
 
 return {
@@ -238,6 +239,15 @@ return {
 						},
 					},
 				},
+			}
+
+			-- Configure QML LSP
+
+			vim.lsp.config.qmlls = {
+				cmd = { "qmlls6", "-E" },
+				filetypes = { "qml" },
+				root_markers = { ".git" },
+				capabilities = capabilities,
 			}
 
 			-- Enable LSP servers
