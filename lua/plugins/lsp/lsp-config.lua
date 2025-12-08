@@ -261,6 +261,23 @@ return {
 			vim.keymap.set("n", "gr", vim.lsp.buf.references, { desc = "LSP: Find references" })
 			vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 			vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename symbol" })
+
+			local lsp_active = true
+			vim.keymap.set("n", "<leader>lt", function()
+				if lsp_active then
+					for _, client in ipairs(vim.lsp.get_clients()) do
+						vim.lsp.stop_client(client.id)
+					end
+					lsp_active = false
+					print("LSP stopped")
+				else
+					for _, server in ipairs(servers) do
+						vim.lsp.enable(server)
+					end
+					lsp_active = true
+					print("LSP started")
+				end
+			end, { desc = "Toggle LSP" })
 		end,
 	},
 }
