@@ -39,6 +39,16 @@ opt.backspace = "indent,eol,start"
 -- clipboard
 opt.clipboard:append("unnamedplus")
 
+-- Alt+Enter: insert blank line below without moving cursor
+vim.keymap.set("n", "<A-CR>", "m`o<Esc>``", { desc = "Insert blank line below (keep cursor)" })
+vim.keymap.set("i", "<A-CR>", "<Esc>m`o<Esc>``i", { desc = "Insert blank line below (keep cursor)" })
+
+-- ge: goto end of line
+vim.keymap.set("n", "ge", "$", { desc = "Go to end of line" })
+
+-- gs: goto start of line
+vim.keymap.set("n", "gs", "^", { desc = "Go to start of line (first non-blank)" })
+
 -- split
 opt.splitright = true
 opt.splitbelow = true
