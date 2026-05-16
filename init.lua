@@ -1,3 +1,6 @@
+-- Fix E79 wildcard issue caused by fish shell
+vim.opt.shell = "/bin/zsh"
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({

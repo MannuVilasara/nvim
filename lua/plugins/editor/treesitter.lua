@@ -1,39 +1,35 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
-		build = ":TSUpdate",
-		config = function()
-			local config = require("nvim-treesitter.configs")
-			config.setup({
-				ignore_install = { "haskell" },
-				sync_install = false,
-				modules = {},
-				auto_install = false,
-				ensure_installed = {
-					"bash",
-					"ruby",
-					"html",
-					"css",
-					"scss",
-					"javascript",
-					"typescript",
-					"tsx",
-					"json",
-					"jsonc",
-					"lua",
-					"markdown",
-					"markdown_inline",
-					"yaml",
-					"dockerfile",
-					"gitignore",
-					"go",
-					"qmljs",
-					"qmldir",
-				},
-				highlight = { enable = true },
-				indent = { enable = false },
-			})
-		end,
-	},
+                lazy = false,
+                build = ":TSUpdate",
+                config = function()
+                        require("nvim-treesitter").setup()
+                        require("nvim-treesitter").install({
+                                        "bash",
+                                        "ruby",
+                                        "html",
+                                        "css",
+                                        "scss",
+                                        "javascript",
+                                        "typescript",
+                                        "tsx",
+                                        "lua",
+                                        "markdown",
+                                        "markdown_inline",
+                                        "yaml",
+                                        "dockerfile",
+                                        "gitignore",
+                                        "go",
+                                        "qmljs",
+                                        "qmldir",
+                        })
+
+                        vim.api.nvim_create_autocmd("FileType", {
+                                callback = function()
+                                        pcall(vim.treesitter.start)
+                                end,
+                        })
+                end,
+        },
 }

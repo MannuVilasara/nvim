@@ -4,6 +4,9 @@
 -- vim.cmd("set shiftwidth=2")
 -- vim.cmd("set rnu")
 
+-- Set shell to zsh to avoid E79 Cannot expand wildcards with fish
+vim.opt.shell = "/bin/zsh"
+
 --vim options
 
 vim.cmd("let g:netrw_liststyle = 3")
